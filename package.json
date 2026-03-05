@@ -1,0 +1,29 @@
+{
+  "name": "node-mongoose-jwt-apis",
+  "version": "1.0.0",
+  "description": "This project is a RESTful API built with Node.js, Express, and MongoDB (Mongoose), implementing authentication and authorization using JWT (JSON Web Tokens). It serves as a full-featured backend for managing users, products, and students, with proper validation, role-based access, and secure endpoints.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aswinsivadas-tech/Node-Mongoose-JWT-APIs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aswinsivadas-tech/Node-Mongoose-JWT-APIs/issues"
+  },
+  "homepage": "https://github.com/aswinsivadas-tech/Node-Mongoose-JWT-APIs#readme",
+  "dependencies": {
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "mongoose": "^9.2.4",
+    "nodemon": "^3.1.14"
+  }
+}
