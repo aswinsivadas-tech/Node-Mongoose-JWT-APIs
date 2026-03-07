@@ -1,7 +1,15 @@
 import User from '../models/user.js';
-
-// import jwt from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 import mongoose from "mongoose";
+
+const generateToken =(id) => {
+  return jwt.sign({ id }, process.env.JWT_SECRET,{ expiresIn:'30d'});
+};
+const createToken = (id) => {
+  return jwt.sign({ id },process.env.JWT_SECRET,{ expiresIn: '3d' });
+};
+
+
 
 // POST/api/regester
 export const registerUser = async (req, res) => {
@@ -28,12 +36,54 @@ console.log(req.body);
   res.status(201).json({
     _id: user._id,
     username: user.username,
-        email: user.email,
+    email: user.email,
     role: user.role,
     age: user.age,
   });
 };
 
+
+export const loginUser = async (req, res) => {
+  const { email, password } = req.body;
+
+  const user = await User.findOne({ email });
+
+  if (!user) {
+    return res.status(401).json({ message: "Invalid email" });
+  }
+
+  const isMatch = await user.matchPassword(password);
+  console.log(password);
+
+  if (!isMatch) {
+    return res.status(401).json({ message: "Invalid password" });
+  }
+
+  res.json({
+    _id: user._id,
+    email: user.email,
+    token: createToken(user._id),
+  });
+};
+// post /api/login
+// export const loginUser = async (req, res) => {
+//   const { email, password } = req.body;
+//   console.log(password);
+//   const user = await User.findOne({ email });
+//   console.log(user.email,"user");
+
+  
+//   if (!user.email || !(await user.matchPassword(password))) {
+//     return res.status(401).json({ message: 'Invalid credentials' });
+//   }
+
+
+//   const token = createToken(user._id);
+//   console.log(token);
+//   res.status(200).json({ _id: user._id, username: user.username, email, token, role: user.role });
+  
+  
+// };
 
 // getusers
 export const getUsers = async (req, res, next) =>{

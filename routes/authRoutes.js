@@ -1,5 +1,5 @@
 import express from 'express';
-import {registerUser,getUserByIdpublic,getUsers,} from '../controllers/authController.js';
+import {registerUser,getUserByIdpublic,getUsers,loginUser,} from '../controllers/authController.js';
 
 const router = express.Router();
 
@@ -7,7 +7,7 @@ const router = express.Router();
 router.post('/register',registerUser);
 
 // // ✅ POST /api/login
-// router.post('/login',validate(loginValidation),loginUser);
+router.post('/login',loginUser);
 
 // ✅ GET /api/users/:id
 router.get('/users/:id',getUserByIdpublic);
