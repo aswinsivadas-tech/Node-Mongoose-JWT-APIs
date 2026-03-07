@@ -1,0 +1,17 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "REST API",
+    "description": "Auto-generated Swagger doc",
+    "version": "1.0.0"
+  },
+  "host": "localhost:5000",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "paths": {},
+  "Schemes": [
+    "http"
+  ]
+}
