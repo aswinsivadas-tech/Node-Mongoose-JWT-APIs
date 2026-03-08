@@ -23,7 +23,7 @@ router.post('/',protect, validate(studentValidation), addStudent);
 router.get('/', protect, getStudents);
 
 // get  marks of a specific student (protected)
-router.get('/id/marks', protect,getStudentMarks);
+router.get('/:id/marks', protect,getStudentMarks);
 
 // put => update student info (protected)
 router.put('/:id', protect, validate(studentUpdateValidation),updateStudent);
