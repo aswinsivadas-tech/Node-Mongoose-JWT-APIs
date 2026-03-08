@@ -17,16 +17,16 @@ const router = express.Router();
 
 // post add new student (protect + validate)
 
-router.post('/',protect, validate(studentValidation), addStudent);
+router.post('/',protect, addStudent);
 
 // get all students (public or protected based on your  choice)
 router.get('/', protect, getStudents);
 
 // get  marks of a specific student (protected)
-router.get('/id/marks', protect,getStudentMarks);
+router.get('/:id/marks', protect,getStudentMarks);
 
 // put => update student info (protected)
-router.put('/:id', protect, validate(studentUpdateValidation),updateStudent);
+router.put('/:id', protect, updateStudent);
 
 // delete => delete student (admin only)
 router.delete('/:id', protect, admin, deleteStudent);
