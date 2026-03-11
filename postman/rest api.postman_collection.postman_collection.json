@@ -1,0 +1,930 @@
+{
+  "info": {
+    "_postman_id": "0e57bf52-123e-494f-8890-8e30e772a89e",
+    "name": "rest api.postman_collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52580463",
+    "_collection_link": "https://go.postman.co/collection/52580463-0e57bf52-123e-494f-8890-8e30e772a89e?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "auth",
+      "item": [
+        {
+          "name": "register user",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"username\": \"Admin\",\r\n  \"email\": \"admin@test.com\",\r\n  \"age\": 25,\r\n  \"password\": \"password123\",\r\n  \"role\": \"admin\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login user",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"admin@test.com\",\r\n  \"password\": \"password123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get all users",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/users",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get User by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/users/69b1aa10db943b7025277230",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "users",
+                "69b1aa10db943b7025277230"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filter by Age",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/users?age=25",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "users"
+              ],
+              "query": [
+                {
+                  "key": "age",
+                  "value": "25"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "student",
+      "item": [
+        {
+          "name": "Add Students",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"james\",\r\n    \"marks\": 98,\r\n    \"class\": \"11th grade\"\r\n\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/students",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "students"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "added student james",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"james\",\r\n    \"marks\": 98,\r\n    \"class\": \"11th grade\"\r\n\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/students",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "students"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "167"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"a7-odn4mJQe+6vSgz1zqC70q1tkC3Q\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 11 Mar 2026 18:36:10 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"name\": \"james\",\n    \"marks\": 98,\n    \"class\": \"11th grade\",\n    \"_id\": \"69b1b61acfcb62f99b782e87\",\n    \"createdAt\": \"2026-03-11T18:36:10.087Z\",\n    \"updatedAt\": \"2026-03-11T18:36:10.087Z\",\n    \"__v\": 0\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get by Class",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"james\",\r\n    \"marks\": 98,\r\n    \"class\": \"11th grade\"\r\n\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/students?class=11th grade",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "students"
+              ],
+              "query": [
+                {
+                  "key": "class",
+                  "value": "11th grade"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Marks",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"james\",\r\n    \"marks\": 98,\r\n    \"class\": \"11th grade\"\r\n\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/students/69b1b61acfcb62f99b782e87/marks",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "students",
+                "69b1b61acfcb62f99b782e87",
+                "marks"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Student",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"marks\": 100,\r\n    \"class\": \"11th Grade\"\r\n\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/students/69b1b61acfcb62f99b782e87",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "students",
+                "69b1b61acfcb62f99b782e87"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "updated  marks and class typo",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"marks\": 100,\r\n    \"class\": \"11th Grade\"\r\n\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/students/69b1b61acfcb62f99b782e87",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "students",
+                    "69b1b61acfcb62f99b782e87"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "168"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"a8-1Nh4qI5NiPeB4A04Dklzk5DNlaI\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 11 Mar 2026 18:42:33 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"_id\": \"69b1b61acfcb62f99b782e87\",\n    \"name\": \"james\",\n    \"marks\": 100,\n    \"class\": \"11th Grade\",\n    \"createdAt\": \"2026-03-11T18:36:10.087Z\",\n    \"updatedAt\": \"2026-03-11T18:42:33.422Z\",\n    \"__v\": 0\n}"
+            }
+          ]
+        },
+        {
+          "name": "Delete Student",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"marks\": 100,\r\n    \"class\": \"11th Grade\"\r\n\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/students/69b1b61acfcb62f99b782e87",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "students",
+                "69b1b61acfcb62f99b782e87"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "deleted student james",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"marks\": 100,\r\n    \"class\": \"11th Grade\"\r\n\r\n}"
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/students/69b1b61acfcb62f99b782e87",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "students",
+                    "69b1b61acfcb62f99b782e87"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "42"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"2a-AtjnaCnIxuYLqXagnN4yLTQXC/M\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 11 Mar 2026 18:43:52 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"Student deleted successfully\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "product",
+      "item": [
+        {
+          "name": "Add Product",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"logic system design\",\r\n  \"author\": \"mark\",\r\n  \"price\": 55.99,\r\n  \"category\": \"Software Engineering\",\r\n  \"publisher\": \"design publisher\",\r\n  \"isbn\": \"478-0135447059\",\r\n  \"stock\": 25\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/products",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "products"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "added product",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"title\": \"logic system design\",\r\n  \"author\": \"mark\",\r\n  \"price\": 55.99,\r\n  \"category\": \"Software Engineering\",\r\n  \"publisher\": \"design publisher\",\r\n  \"isbn\": \"478-0135447059\",\r\n  \"stock\": 25\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/products",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "products"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "280"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"118-rHh9Voh347euBFWeS1SjKK9eRVA\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 11 Mar 2026 18:17:38 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"title\": \"logic system design\",\n    \"author\": \"mark\",\n    \"price\": 55.99,\n    \"category\": \"Software Engineering\",\n    \"publisher\": \"design publisher\",\n    \"isbn\": \"478-0135447059\",\n    \"stock\": 25,\n    \"_id\": \"69b1b1c2cfcb62f99b782e75\",\n    \"createdAt\": \"2026-03-11T18:17:38.806Z\",\n    \"updatedAt\": \"2026-03-11T18:17:38.806Z\",\n    \"__v\": 0\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get All Products",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"logic system design\",\r\n  \"author\": \"mark\",\r\n  \"price\": 55.99,\r\n  \"category\": \"Software Engineering\",\r\n  \"publisher\": \"design publisher\",\r\n  \"isbn\": \"478-0135447059\",\r\n  \"stock\": 25\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/products",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "products"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get All Products",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"title\": \"logic system design\",\r\n  \"author\": \"mark\",\r\n  \"price\": 55.99,\r\n  \"category\": \"Software Engineering\",\r\n  \"publisher\": \"design publisher\",\r\n  \"isbn\": \"478-0135447059\",\r\n  \"stock\": 25\r\n}"
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/products",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "products"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "1170"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"492-BDlyaW6NbdhAyMNbb1Wf0oJclbE\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 11 Mar 2026 18:19:47 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    {\n        \"_id\": \"69abd91b1e6e520014f06f16\",\n        \"title\": \"The Pragmatic Programmer\",\n        \"author\": \"David Thomas, Andrew Hunt\",\n        \"price\": 45.99,\n        \"category\": \"Software Engineering\",\n        \"publisher\": \"Addison-Wesley Professional\",\n        \"isbn\": \"978-0135957059\",\n        \"stock\": 25,\n        \"createdAt\": \"2026-03-07T07:51:55.345Z\",\n        \"updatedAt\": \"2026-03-07T07:51:55.345Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"69abda9fc5a70d63ffe3b3f1\",\n        \"title\": \"Grokking Algorithms\",\n        \"author\": \"Aditya Bhargava\",\n        \"price\": 39.99,\n        \"category\": \"Computer Science\",\n        \"publisher\": \"Manning Publications\",\n        \"isbn\": \"978-1617292231\",\n        \"stock\": 50,\n        \"createdAt\": \"2026-03-07T07:58:23.532Z\",\n        \"updatedAt\": \"2026-03-07T07:58:23.532Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"69abdd35c67af7f763be44c3\",\n        \"title\": \"harry potter\",\n        \"author\": \"jk rowling\",\n        \"price\": 15066,\n        \"category\": \"fiction\",\n        \"publisher\": \"Bloomsbury Publishings\",\n        \"isbn\": \"978-0-7475-3269-9\",\n        \"stock\": 1000,\n        \"createdAt\": \"2026-03-07T08:09:25.906Z\",\n        \"updatedAt\": \"2026-03-07T08:22:06.028Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"69b1b1c2cfcb62f99b782e75\",\n        \"title\": \"logic system design\",\n        \"author\": \"mark\",\n        \"price\": 55.99,\n        \"category\": \"Software Engineering\",\n        \"publisher\": \"design publisher\",\n        \"isbn\": \"478-0135447059\",\n        \"stock\": 25,\n        \"createdAt\": \"2026-03-11T18:17:38.806Z\",\n        \"updatedAt\": \"2026-03-11T18:17:38.806Z\",\n        \"__v\": 0\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Filter by Price",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"logic system design\",\r\n  \"author\": \"mark\",\r\n  \"price\": 55.99,\r\n  \"category\": \"Software Engineering\",\r\n  \"publisher\": \"design publisher\",\r\n  \"isbn\": \"478-0135447059\",\r\n  \"stock\": 25\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/products?minPrice=2000",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "products"
+              ],
+              "query": [
+                {
+                  "key": "minPrice",
+                  "value": "2000"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Product",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"price\": 2500,\r\n  \"category\": \"Computer Science\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/products/69b1b1c2cfcb62f99b782e75",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "products",
+                "69b1b1c2cfcb62f99b782e75"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "updated price and title",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"price\": 2500,\r\n  \"category\": \"Computer Science\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/products/69b1b1c2cfcb62f99b782e75",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "products",
+                    "69b1b1c2cfcb62f99b782e75"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "275"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"113-yDg+h0m8x/ECf38qN7XD8Jbhrgk\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 11 Mar 2026 18:27:00 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"_id\": \"69b1b1c2cfcb62f99b782e75\",\n    \"title\": \"logic system design\",\n    \"author\": \"mark\",\n    \"price\": 2500,\n    \"category\": \"Computer Science\",\n    \"publisher\": \"design publisher\",\n    \"isbn\": \"478-0135447059\",\n    \"stock\": 25,\n    \"createdAt\": \"2026-03-11T18:17:38.806Z\",\n    \"updatedAt\": \"2026-03-11T18:27:00.909Z\",\n    \"__v\": 0\n}"
+            }
+          ]
+        },
+        {
+          "name": "Delete Product",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"price\": 2500,\r\n  \"category\": \"Computer Science\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/products/69b1b1c2cfcb62f99b782e75",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "products",
+                "69b1b1c2cfcb62f99b782e75"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "deleted the product",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"price\": 2500,\r\n  \"category\": \"Computer Science\"\r\n}"
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/products/69b1b1c2cfcb62f99b782e75",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "products",
+                    "69b1b1c2cfcb62f99b782e75"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "29"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1d-SUOjrQM9v/ZnWfd464qBypgAgyE\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 11 Mar 2026 18:29:04 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"Product deleted\"\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "token",
+      "value": ""
+    }
+  ]
+}
