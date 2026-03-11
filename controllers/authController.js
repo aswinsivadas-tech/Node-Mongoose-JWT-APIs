@@ -15,9 +15,9 @@ const createToken = (id) => {
 export const registerUser = async (req, res) => {
   const { username,email, password, role, age } = req.body;
 
-  if (!username || !password) {
-    return res.status(400).json({ message: `please fill all required fields` });
-  }
+ if (!username || !email || !password || !age) {
+  return res.status(400).json({ message: `please fill all required fields` });
+}
   const userExists = await User.findOne({ username });
   if (userExists) {
     return res.status(400).json({ message: "User already exists" });
@@ -92,7 +92,7 @@ export const getUsers = async (req, res, next) =>{
 
     // Age filter (convert to number)
     if(req.query.age) {
-      query.age = number(req.query.age);
+      query.age = Number(req.query.age);
     }
   // role filter( case-insensitive and trim spaces)
   if(req.query.role) {
@@ -101,6 +101,12 @@ export const getUsers = async (req, res, next) =>{
 
  console.log("Final Query:", query); // Debugging
 const users= await User.find(query).select('-password');
+
+// to know is users of that age do not exist message
+if (users.length === 0) {
+      return res.status(404).json({ message: "No users found" });
+    }
+
 res.json(users);
   }catch(error){
     next(error);
