@@ -23,9 +23,6 @@ export const protect = async (req, res, next) => {
     // verify token
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
-
-
-    console.log(decoded);
     // fetch user without password
 
     const user = await User.findById(decoded.id).select("-password");
